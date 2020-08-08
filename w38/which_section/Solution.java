@@ -1,3 +1,4 @@
+// https://www.hackerrank.com/contests/w38/challenges/which-section/submissions/code/1325557358
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -11,8 +12,14 @@ public class Solution {
     // Complete the whichSection function below.
     static int whichSection(int n, int k, int[] a) {
         // Return the section number you will be assigned to assuming you are student number k.
-        // TODO:
-        return 0;
+        int i = 0, total = 0;
+        while (i < a.length) {
+            total += a[i];
+            if (k <= total) break;
+            i++;
+        }
+        if (i < a.length) return i + 1;
+        else return a.length;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
